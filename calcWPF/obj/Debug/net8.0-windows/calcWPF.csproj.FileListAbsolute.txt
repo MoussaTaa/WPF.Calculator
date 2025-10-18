@@ -18,3 +18,4 @@ C:\Users\mouss\source\repos\calcWPF\calcWPF\obj\Debug\net8.0-windows\refint\calc
 C:\Users\mouss\source\repos\calcWPF\calcWPF\obj\Debug\net8.0-windows\calcWPF.pdb
 C:\Users\mouss\source\repos\calcWPF\calcWPF\obj\Debug\net8.0-windows\calcWPF.genruntimeconfig.cache
 C:\Users\mouss\source\repos\calcWPF\calcWPF\obj\Debug\net8.0-windows\ref\calcWPF.dll
+C:\Users\mouss\source\repos\calcWPF\calcWPF\obj\Debug\net8.0-windows\calcWPF.sourcelink.json

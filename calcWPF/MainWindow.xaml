@@ -12,7 +12,7 @@
                 <RowDefinition Height="33*"/>
             </Grid.RowDefinitions>
             <Canvas Grid.Row="0">
-                <Rectangle></Rectangle>
+                
             </Canvas>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
