@@ -9,11 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\**" />
+    <EmbeddedResource Remove="Images\**" />
+    <None Remove="Images\**" />
+    <Page Remove="Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="calculator.ico" />
+    <None Remove="calculator_icon-icons.com_72046.png" />
     <None Remove="close.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="close.png" />
+    <Resource Include="calculator.ico" />
+    <Resource Include="calculator_icon-icons.com_72046.png" />
   </ItemGroup>
 
 </Project>

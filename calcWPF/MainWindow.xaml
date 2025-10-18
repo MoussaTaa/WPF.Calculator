@@ -12,8 +12,8 @@
                 <RowDefinition Height="33*"/>
             </Grid.RowDefinitions>
             <Canvas Grid.Row="0">
-                <Label Content="271" Canvas.Left="30" Canvas.Top="109" Width="280" Height="71" FontSize="66" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-                <Label Content="145+24" Canvas.Left="10" Canvas.Top="40" Width="300" Height="60" FontSize="22" HorizontalContentAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" Foreground="#CC626262"/>
+                <Label x:Name="lblResult" Content="0" Canvas.Left="30" Canvas.Top="109" Width="280" Height="71" FontSize="66" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                <Label x:Name="lblEquation" Content="" Canvas.Left="10" Canvas.Top="40" Width="300" Height="60" FontSize="22" HorizontalContentAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" Foreground="#CC626262"/>
                 <Border BorderBrush="Black" BorderThickness="2" Height="80" Canvas.Top="109" Width="320" HorizontalAlignment="Left" VerticalAlignment="Center" CornerRadius="8,8,8,8"/>
                 
                 <Button x:Name="btnCloseApp" Content="×" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Height="35" Background="#FFCC3434" Foreground="White" FontSize="28" FontFamily="Cambria Math" Click="btnCloseApp_Click"/>
@@ -34,25 +34,26 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <!--  Operation Buttons:  -->
-                <Button Content="+" Grid.Column="0" Grid.Row="0" x:Name="btnPlus" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="-" Grid.Column="1" Grid.Row="0" x:Name="btnMinus" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="×" Grid.Column="2" Grid.Row="0" x:Name="btnMultiplication" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="÷" Grid.Column="3" Grid.Row="0" x:Name="btnDivision" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
+                <Button Content="+" Grid.Column="0" Grid.Row="0" x:Name="btnPlus" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnPlus_Click"/>
+                <Button Content="-" Grid.Column="1" Grid.Row="0" x:Name="btnMinus" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnMinus_Click"/>
+                <Button Content="×" Grid.Column="2" Grid.Row="0" x:Name="btnMultiplication" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnMultiplication_Click"/>
+                <Button Content="÷" Grid.Column="3" Grid.Row="0" x:Name="btnDivision" HorizontalAlignment="Left" Width="80" FontSize="50" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnDivision_Click"/>
                 <!-- ar Button:  -->
-                <Button Content="1" Grid.Column="0" Grid.Row="1" x:Name="btnOne" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="2" Grid.Column="1" Grid.Row="1" x:Name="btnTwo" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="3" Grid.Column="2" Grid.Row="1" x:Name="btnThree" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="4" Grid.Column="0" Grid.Row="2" x:Name="btnFour" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="5" Grid.Column="1" Grid.Row="2" x:Name="btnFive" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="6" Grid.Column="2" Grid.Row="2" x:Name="btnSix" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="7" Grid.Column="0" Grid.Row="3" x:Name="btnSeven" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="8" Grid.Column="1" Grid.Row="3" x:Name="btnEight" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="9" Grid.Column="2" Grid.Row="3" x:Name="btnNine" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="0" Grid.Column="1" Grid.Row="4" x:Name="btnZero" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="C" Grid.Column="0" Grid.Row="4" x:Name="btnClear" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
-                <Button Content="." Grid.Column="2" Grid.Row="4" x:Name="btnPoint" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
+                <Button Content="1" Grid.Column="0" Grid.Row="3" x:Name="btnOne" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnOne_Click"/>
+                <Button Content="2" Grid.Column="1" Grid.Row="3" x:Name="btnTwo" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnTwo_Click"/>
+                <Button Content="3" Grid.Column="2" Grid.Row="3" x:Name="btnThree" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnThree_Click"/>
+                <Button Content="4" Grid.Column="0" Grid.Row="2" x:Name="btnFour" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnFour_Click"/>
+                <Button Content="5" Grid.Column="1" Grid.Row="2" x:Name="btnFive" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnFive_Click"/>
+                <Button Content="6" Grid.Column="2" Grid.Row="2" x:Name="btnSix" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnSix_Click"/>
+                <Button Content="7" Grid.Column="0" Grid.Row="1" x:Name="btnSeven" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnSeven_Click"/>
+                <Button Content="8" Grid.Column="1" Grid.Row="1" x:Name="btnEight" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnEight_Click"/>
+                <Button Content="9" Grid.Column="2" Grid.Row="1" x:Name="btnNine" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnNine_Click"/>
+                
+                <Button Content="0" Grid.Column="1" Grid.Row="4" x:Name="btnZero" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnZero_Click"/>
+                <Button Content="C" Grid.Column="0" Grid.Row="4" x:Name="btnClear" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnClear_Click"/>
+                <Button Content="." Grid.Column="2" Grid.Row="4" x:Name="btnPoint" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0" Click="btnPoint_Click"/>
                 <!-- Equal Button-->
-                <Button Content="=" Grid.Column="3" Grid.RowSpan="4" Grid.Row="1" x:Name="btnEqual" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="White" BorderBrush="Black" Background="#FF335DFF" FontFamily="Arial"/>
+                <Button Content="=" Grid.Column="3" Grid.RowSpan="4" Grid.Row="1" x:Name="btnEqual" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="White" BorderBrush="Black" Background="#FF335DFF" FontFamily="Arial" Click="btnEqual_Click"/>
             </Grid>
         </Grid>
     </Border>
