@@ -20,5 +20,18 @@ namespace calcWPF
         {
             InitializeComponent();
         }
+
+        private void btnCloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            this.MouseDown += delegate
+            {
+                DragMove();
+            };
+        }
     }
 }

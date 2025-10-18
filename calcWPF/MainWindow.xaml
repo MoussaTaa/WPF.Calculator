@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calcWPF"
-        mc:Ignorable="d" Height="530" Width="320" Background="{x:Null}" Foreground="{x:Null}" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" FontFamily="Bahnschrift">
+        mc:Ignorable="d" Height="530" Width="320" Background="{x:Null}" Foreground="{x:Null}" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" FontFamily="Bahnschrift" Activated="Window_Activated">
     <Border Background="#FFE2E2E2" CornerRadius="15,15,15,15">
         <Grid>
             <Grid.RowDefinitions>
@@ -12,10 +12,11 @@
                 <RowDefinition Height="33*"/>
             </Grid.RowDefinitions>
             <Canvas Grid.Row="0">
-                <Image Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="10" Canvas.Left="10" Source="/close.png" Stretch="UniformToFill"/>
                 <Label Content="271" Canvas.Left="30" Canvas.Top="109" Width="280" Height="71" FontSize="66" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
                 <Label Content="145+24" Canvas.Left="10" Canvas.Top="40" Width="300" Height="60" FontSize="22" HorizontalContentAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" Foreground="#CC626262"/>
                 <Border BorderBrush="Black" BorderThickness="2" Height="80" Canvas.Top="109" Width="320" HorizontalAlignment="Left" VerticalAlignment="Center" CornerRadius="8,8,8,8"/>
+                
+                <Button x:Name="btnCloseApp" Content="×" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Height="35" Background="#FFCC3434" Foreground="White" FontSize="28" FontFamily="Cambria Math" Click="btnCloseApp_Click"/>
 
             </Canvas>
             <Grid Grid.Row="1">
@@ -51,7 +52,7 @@
                 <Button Content="C" Grid.Column="0" Grid.Row="4" x:Name="btnClear" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
                 <Button Content="." Grid.Column="2" Grid.Row="4" x:Name="btnPoint" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="#FF111111" BorderBrush="Black" Background="#FFF0F0F0"/>
                 <!-- Equal Button-->
-                <Button Content="=" Grid.Column="3" Grid.RowSpan="4" Grid.Row="1" x:Name="btnEqual" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="White" BorderBrush="Black" Background="#FF335DFF" FontFamily="Cascadia Code"/>
+                <Button Content="=" Grid.Column="3" Grid.RowSpan="4" Grid.Row="1" x:Name="btnEqual" HorizontalAlignment="Left" Width="80" FontSize="42" Foreground="White" BorderBrush="Black" Background="#FF335DFF" FontFamily="Arial"/>
             </Grid>
         </Grid>
     </Border>
